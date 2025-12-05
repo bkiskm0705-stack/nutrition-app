@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "選手用アプリ (Patient) を起動",
+            "type": "python",
+            "request": "launch",
+            "module": "streamlit",
+            "args": [
+                "run",
+                "${workspaceFolder}/patient_app.py"
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "管理者用アプリ (Admin) を起動",
+            "type": "python",
+            "request": "launch",
+            "module": "streamlit",
+            "args": [
+                "run",
+                "${workspaceFolder}/admin_app.py"
+            ],
+            "justMyCode": true
+        }
+    ]
+}

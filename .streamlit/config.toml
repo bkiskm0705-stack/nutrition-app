@@ -1,0 +1,11 @@
+[server]
+runOnSave = true
+headless = true
+
+[theme]
+base = "light"                  # ベースを「白」にする
+primaryColor = "#007bff"        # メインカラー
+backgroundColor = "#f8f9fa"     # 背景色
+secondaryBackgroundColor = "#ffffff" # サイドバーなどの色
+textColor = "#333333"           # 文字色
+font = "sans serif"
