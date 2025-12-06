@@ -46,30 +46,26 @@
     box-shadow: 0 6px 10px rgba(0,123,255, 0.3);
 }
 
-/* --- UI非表示設定（最終兵器版） --- */
+/* --- UI非表示設定（シンプル・強力版） --- */
 
-/* ヘッダー、デプロイボタン、ツールバー、ハンバーガーメニュー */
-header, .stAppDeployButton, [data-testid="stToolbar"], [data-testid="stHeader"] {
+/* 1. ヘッダー（上の色付きバーとハンバーガーメニュー）を消す */
+header {
     visibility: hidden !important;
-    display: none !important;
-    height: 0 !important;
 }
 
-/* サイドバー開閉ボタン（これは残す） */
+/* 2. フッター（下のMade with Streamlit）を消す */
+footer {
+    visibility: hidden !important;
+}
+
+/* 3. 余計な隙間を詰める */
+.block-container {
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+}
+
+/* 4. サイドバーを開くボタンだけは見せる */
 [data-testid="collapsedControl"] {
     visibility: visible !important;
-    display: block !important;
-    z-index: 999999;
-}
-
-/* フッター、ステータスウィジェット、下部の余白 */
-footer, [data-testid="stFooter"], [data-testid="stStatusWidget"] {
-    visibility: hidden !important;
-    display: none !important;
-    height: 0 !important;
-}
-
-/* アプリ下部の余計なパディングも消す */
-.block-container {
-    padding-bottom: 0 !important;
+    top: 1rem !important; /* 位置調整 */
 }
