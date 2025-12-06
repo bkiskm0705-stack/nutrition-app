@@ -50,3 +50,26 @@
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
 header {visibility: hidden;}
+
+/* --- 追記：不要なアイコンを隠す --- */
+
+/* 右上のGitHubアイコンなどを隠す */
+.stAppDeployButton {
+    display: none;
+}
+
+/* 右上のハンバーガーメニュー（三）も消したい場合は以下も追加 */
+/* #MainMenu {visibility: hidden;} */
+
+/* 右下の「Made with Streamlit」や管理メニューを隠す */
+footer {
+    visibility: hidden;
+}
+header {
+    visibility: hidden;
+}
+
+/* ビューワーのツールバー（右上のボタン群）を隠す */
+.stToolbar {
+    display: none;
+}
