@@ -46,33 +46,30 @@
     box-shadow: 0 6px 10px rgba(0,123,255, 0.3);
 }
 
-/* --- UI非表示設定（最強版） --- */
+/* --- UI非表示設定（最終兵器版） --- */
 
-/* 1. ヘッダー装飾と右上のツールバー（Deployボタンなど）を消す */
-header, 
-.stAppDeployButton, 
-[data-testid="stToolbar"], 
-[data-testid="stHeader"] {
+/* ヘッダー、デプロイボタン、ツールバー、ハンバーガーメニュー */
+header, .stAppDeployButton, [data-testid="stToolbar"], [data-testid="stHeader"] {
     visibility: hidden !important;
-    background-color: transparent !important;
+    display: none !important;
+    height: 0 !important;
 }
 
-/* 2. 左上の「サイドバーを開くボタン（＞）」だけは復活させる */
+/* サイドバー開閉ボタン（これは残す） */
 [data-testid="collapsedControl"] {
     visibility: visible !important;
     display: block !important;
     z-index: 999999;
 }
 
-/* 3. フッター（Made with Streamlit）を消す */
-footer, 
-[data-testid="stFooter"] {
+/* フッター、ステータスウィジェット、下部の余白 */
+footer, [data-testid="stFooter"], [data-testid="stStatusWidget"] {
     visibility: hidden !important;
     display: none !important;
+    height: 0 !important;
 }
 
-/* 4. 【追加】右下の「Manage app」やステータス表示を消す */
-[data-testid="stStatusWidget"] {
-    visibility: hidden !important;
-    display: none !important;
+/* アプリ下部の余計なパディングも消す */
+.block-container {
+    padding-bottom: 0 !important;
 }
