@@ -1,12 +1,12 @@
-/* --- style.css (見やすいモダン・ライト版) --- */
+/* --- style.css (見やすいモダン・ライト版 ＋ 完全UI非表示) --- */
 
 :root {
-    --main-color: #007bff;       /* 鮮やかな青（信頼感・スポーツ） */
-    --hover-color: #0056b3;      /* ボタンを押した時の濃い青 */
-    --bg-color: #f8f9fa;         /* 全体の背景（目に優しい薄いグレー） */
-    --card-bg: #ffffff;          /* 入力欄などの背景（白） */
-    --text-color: #333333;       /* 文字色（くっきりした黒グレー） */
-    --sub-text: #666666;         /* 補足文字の色 */
+    --main-color: #007bff;
+    --hover-color: #0056b3;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --sub-text: #666666;
 }
 
 /* 全体の背景 */
@@ -25,7 +25,7 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* うっすら影をつける */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 /* ボタンのデザイン */
@@ -46,34 +46,33 @@
     box-shadow: 0 6px 10px rgba(0,123,255, 0.3);
 }
 
-/* 余計なものを消す */
-#MainMenu {visibility: hidden;}
-footer {visibility: hidden;}
-header {visibility: hidden;}
-
 /* --- UI非表示設定（最強版） --- */
 
-/* 1. 右上の「Deploy」ボタンやハンバーガーメニューを消す */
+/* 1. ヘッダー装飾と右上のツールバー（Deployボタンなど）を消す */
+header, 
 .stAppDeployButton, 
 [data-testid="stToolbar"], 
 [data-testid="stHeader"] {
     visibility: hidden !important;
+    background-color: transparent !important;
 }
 
-/* 2. ただし、左上の「サイドバーを開くボタン」だけは復活させる */
+/* 2. 左上の「サイドバーを開くボタン（＞）」だけは復活させる */
 [data-testid="collapsedControl"] {
     visibility: visible !important;
     display: block !important;
-    z-index: 999999; /* 最前面に持ってくる */
+    z-index: 999999;
 }
 
-/* 3. 下の「Made with Streamlit」や管理メニューを消す */
-footer {
+/* 3. フッター（Made with Streamlit）を消す */
+footer, 
+[data-testid="stFooter"] {
     visibility: hidden !important;
     display: none !important;
 }
 
-/* 4. ヘッダーの飾り（色付きバー）を消す */
-header {
-    background-color: transparent !important;
+/* 4. 【追加】右下の「Manage app」やステータス表示を消す */
+[data-testid="stStatusWidget"] {
+    visibility: hidden !important;
+    display: none !important;
 }
