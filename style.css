@@ -51,25 +51,29 @@
 footer {visibility: hidden;}
 header {visibility: hidden;}
 
-/* --- 追記：不要なアイコンを隠す --- */
+/* --- UI非表示設定（最強版） --- */
 
-/* 右上のGitHubアイコンなどを隠す */
-.stAppDeployButton {
-    display: none;
+/* 1. 右上の「Deploy」ボタンやハンバーガーメニューを消す */
+.stAppDeployButton, 
+[data-testid="stToolbar"], 
+[data-testid="stHeader"] {
+    visibility: hidden !important;
 }
 
-/* 右上のハンバーガーメニュー（三）も消したい場合は以下も追加 */
-/* #MainMenu {visibility: hidden;} */
+/* 2. ただし、左上の「サイドバーを開くボタン」だけは復活させる */
+[data-testid="collapsedControl"] {
+    visibility: visible !important;
+    display: block !important;
+    z-index: 999999; /* 最前面に持ってくる */
+}
 
-/* 右下の「Made with Streamlit」や管理メニューを隠す */
+/* 3. 下の「Made with Streamlit」や管理メニューを消す */
 footer {
-    visibility: hidden;
-}
-header {
-    visibility: hidden;
+    visibility: hidden !important;
+    display: none !important;
 }
 
-/* ビューワーのツールバー（右上のボタン群）を隠す */
-.stToolbar {
-    display: none;
+/* 4. ヘッダーの飾り（色付きバー）を消す */
+header {
+    background-color: transparent !important;
 }
